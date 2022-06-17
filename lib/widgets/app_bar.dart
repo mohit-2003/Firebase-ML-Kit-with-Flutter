@@ -6,13 +6,11 @@ class AppBarWithTabs extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return new AppBar(
-      leading: const Icon(Icons.person),
-      titleSpacing: 5,
       title: const Text("ML Kit"),
       bottom: const TabBar(tabs: [
         Tab(text: "Text Recognition"),
-        Tab(text: "Face Detection"),
         Tab(text: "Image Labeling"),
+        Tab(text: "Face Detection"),
         // Tab(text: "Object Detection and Tracking"),
         // Tab(text: "Digital Ink Recognition"),
         // Tab(text: "Barcode Scanning"),

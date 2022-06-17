@@ -14,8 +14,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final _screenList = [
     const TextRecognitionScreen(),
+    const ImageLabelingScreen(),
     const FaceDetectionScreen(),
-    const ImageLabelingScreen()
   ];
   @override
   Widget build(BuildContext context) {
