@@ -1,6 +1,4 @@
 import 'dart:developer' as dev;
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
 
@@ -38,7 +36,6 @@ class MlLogic {
   }
 
   // face detector
-  // TODO
   static Future<List<Rect>> faceDetector(String filePath) async {
     final InputImage inputImage = InputImage.fromFilePath(filePath);
     final FaceDetector faceDetector =
@@ -120,6 +117,18 @@ class MlLogic {
 
       resultText += "Raw value : ${rawValue.toString()}";
     }
+    return resultText;
+  }
+
+  // translator
+  static Future<String> translate(String text) async {
+    const TranslateLanguage sourceLanguage = TranslateLanguage.english;
+    const TranslateLanguage targetLanguage = TranslateLanguage.hindi;
+
+    final OnDeviceTranslator onDeviceTranslator = new OnDeviceTranslator(
+        sourceLanguage: sourceLanguage, targetLanguage: targetLanguage);
+
+    String resultText = await onDeviceTranslator.translateText(text);
     return resultText;
   }
 }

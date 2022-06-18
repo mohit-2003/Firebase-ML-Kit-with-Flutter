@@ -17,7 +17,7 @@ class AppBarWithTabs extends StatelessWidget with PreferredSizeWidget {
         // Tab(text: "Digital Ink Recognition"),
         // Tab(text: "Pose Detection"),
         // Tab(text: "Selfie Segmentation"),
-        // Tab(text: "On-Device Translation"),
+        Tab(text: "On-Device Translation"),
         // Tab(text: "Smart Reply"),
         // Tab(text: "Entity Extraction"),
       ]),

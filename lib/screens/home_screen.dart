@@ -1,8 +1,5 @@
-import 'package:firebase_ml_kit_flutter/screens/barcode_scanner_screen.dart';
-import 'package:firebase_ml_kit_flutter/screens/face_detection_screen.dart';
-import 'package:firebase_ml_kit_flutter/screens/image_labeling_screen.dart';
-import 'package:firebase_ml_kit_flutter/screens/language_identifier_screen.dart';
-import 'package:firebase_ml_kit_flutter/screens/text_recognition_screen.dart';
+import 'package:firebase_ml_kit_flutter/helper/operation_enum.dart';
+import 'package:firebase_ml_kit_flutter/screens/result_screen.dart';
 import 'package:firebase_ml_kit_flutter/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -14,12 +11,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final _screenList = [
-    const TextRecognitionScreen(),
-    const ImageLabelingScreen(),
-    const FaceDetectionScreen(),
-    const BarcodeScannerScreen(),
-    const LanguageIdentifierScreen(),
+  final List<ResultScreen> _screenList = [
+    const ResultScreen(operation: Operations.TEXT_RECOGNITION),
+    const ResultScreen(operation: Operations.IMAGE_LABELING),
+    const ResultScreen(operation: Operations.FACE_DETECTION),
+    const ResultScreen(operation: Operations.BARCODE_SCANNING),
+    const ResultScreen(operation: Operations.LANGUAGE_IDENTIFICATION),
+    const ResultScreen(operation: Operations.TRANSLATE),
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: new Scaffold(
           appBar: const AppBarWithTabs(),
           body: new TabBarView(
-            physics: const NeverScrollableScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             children: _screenList,
           ),
         ));
