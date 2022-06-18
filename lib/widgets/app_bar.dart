@@ -7,16 +7,16 @@ class AppBarWithTabs extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return new AppBar(
       title: const Text("ML Kit"),
-      bottom: const TabBar(tabs: [
+      bottom: const TabBar(isScrollable: true, tabs: [
         Tab(text: "Text Recognition"),
         Tab(text: "Image Labeling"),
         Tab(text: "Face Detection"),
+        Tab(text: "Barcode Scanning"),
+        Tab(text: "Language Identification"),
         // Tab(text: "Object Detection and Tracking"),
         // Tab(text: "Digital Ink Recognition"),
-        Tab(text: "Barcode Scanning"),
         // Tab(text: "Pose Detection"),
         // Tab(text: "Selfie Segmentation"),
-        Tab(text: "Language Identification"),
         // Tab(text: "On-Device Translation"),
         // Tab(text: "Smart Reply"),
         // Tab(text: "Entity Extraction"),
